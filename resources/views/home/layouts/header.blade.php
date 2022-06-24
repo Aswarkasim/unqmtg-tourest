@@ -29,28 +29,32 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-           <li class="nav-item active-menu">
+           <li class="nav-item {{Request::is('/') ? 'active-menu' : ''}}">
             <a class="nav-link font-weight-bold text-secondary" href="/"> Home</a>
           </li>
 
-           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-secondary" href="/post">Destinasi</a>
+           <li class="nav-item {{Request::is('wisata*') ? 'active-menu' : ''}}">
+            <a class="nav-link font-weight-bold text-secondary" href="/wisata">Destinasi</a>
           </li>
 
-           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-secondary" href="/post">Home Stay</a>
+           <li class="nav-item {{Request::is('penginapan*') ? 'active-menu' : ''}}">
+            <a class="nav-link font-weight-bold text-secondary" href="/penginapan">Penginapan</a>
           </li>
 
-           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-secondary" href="/post">Jajanan</a>
+           <li class="nav-item {{Request::is('rental*') ? 'active-menu' : ''}}">
+            <a class="nav-link font-weight-bold text-secondary" href="/rental">Rental Mobil</a>
           </li>
 
-           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-secondary" href="/post">Kuliner</a>
+           <li class="nav-item {{Request::is('jajanan*') ? 'active-menu' : ''}}">
+            <a class="nav-link font-weight-bold text-secondary" href="/jajanan">Jajanan</a>
           </li>
 
-           <li class="nav-item">
-            <a class="nav-link font-weight-bold text-secondary" href="/post">Kontak</a>
+           <li class="nav-item {{Request::is('kuliner*') ? 'active-menu' : ''}}">
+            <a class="nav-link font-weight-bold text-secondary" href="/kuliner">Kuliner</a>
+          </li>
+
+           <li class="nav-item {{Request::is('kontak*') ? 'active-menu' : ''}}">
+            <a class="nav-link font-weight-bold text-secondary" href="/kontak">Kontak</a>
           </li>
 
          

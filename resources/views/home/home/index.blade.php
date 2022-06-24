@@ -39,41 +39,20 @@
         <h2>Cari Tempat Terbaik di Mateng</h2>
       </div>
 
-      <div class="col-md-6 mb-3" data-aos="zoom-in" data-aos-delay="50">
+      @foreach ($kecamatan as $item)
+          
+      <div class="{{$loop->iteration == 1 ? 'col-md-12' : 'col-md-6'}} mb-3" data-aos="zoom-in" data-aos-delay="{{$loop->iteration * 200}}">
         <div class="wrapper-dest">
-          <img src="/img/1.jpg" alt="..." class="image-dest image-zoom">
-          <h3 class="title-kecamatan"><i class="fas fa-map-marker-alt"></i> Karossa</h3>
+          <img src="/{{$item->cover}}" alt="..." class="image-dest image-zoom">
+          <h3 class="title-kecamatan"><i class="fas fa-map-marker-alt"></i> {{$item->name}}</h3>
           <div class="overlay">
-          <a href=""> <h2 class="title-kecamatan text-dest text-warning"><i class="fas fa-map-marker-alt"></i> Karossa</h2></a>
+            <a href="/wisata?kecamatan_id={{$item->id}}"> <h2 class="title-kecamatan text-dest text-warning"><i class="fas fa-map-marker-alt"></i> {{$item->name}}</h2></a>
             <h3 class="text-dest brush-font text-primary">Wisata</h3>
           </div>
         </div>
       </div>
-
-       <div class="col-md-6 mb-3" data-aos="zoom-in" data-aos-delay="50">
-        <div class="wrapper-dest">
-          <img src="/img/2.jpg" alt="..." class="image-dest image-zoom">
-          <h3 class="title-kecamatan"><i class="fas fa-map-marker-alt"></i> Budong-budong</h3>
-          <div class="overlay">
-          <a href=""> <h2 class="title-kecamatan text-dest text-warning"><i class="fas fa-map-marker-alt"></i> Budong-budong</h2></a>
-            <h3 class="text-dest brush-font text-primary">Wisata</h3>
-          </div>
-        </div>
-      </div>
-
-       <div class="col-md-6 mb-3" data-aos="zoom-in" data-aos-delay="50">
-        <div class="wrapper-dest">
-          <img src="/img/3.jpg" alt="..." class="image-dest image-zoom">
-          <h3 class="title-kecamatan"><i class="fas fa-map-marker-alt"></i> Topoyo</h3>
-          <div class="overlay">
-          <a href=""> <h2 class="title-kecamatan text-dest text-warning"><i class="fas fa-map-marker-alt"></i> Topoyo</h2></a>
-            <h3 class="text-dest brush-font text-primary">Wisata</h3>
-          </div>
-        </div>
-      </div>
-
-
       
+      @endforeach
 
       
 
@@ -97,9 +76,10 @@
         <h2>Jangan Lupa Coba Jajanan Kuliner</h2>
       </div>
 
-      @for ($i = 1; $i <= 4; $i++)
+      {{-- @dd($kuliner) --}}
+      @foreach ($kuliner as $item)
           
-      <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="{{$i*200}}" data-aos-anchor-placement="top-bottom">
+      <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="{{$loop->iteration*200}}" data-aos-anchor-placement="top-bottom">
         <div class="card">
           <img src="/img/food.jpg" class="card-img-top" alt="...">
           <div class="card-body">
@@ -110,7 +90,7 @@
         </div>
       </div>
       
-      @endfor
+      @endforeach
       
 
       <div class="text-center">

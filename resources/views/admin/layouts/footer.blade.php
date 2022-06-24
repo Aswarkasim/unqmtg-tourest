@@ -16,17 +16,40 @@
 <!-- jQuery -->
 <script src="/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
+
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/plugins/summernote/summernote-bs4.min.js"></script>
+
 <!-- AdminLTE App -->
 <script src="/dist/js/adminlte.min.js"></script>
 <script src="/vendor/sweetalert/sweetalert2.all.min.js"></script>
 
+
 <script>
-    // Tommbol hapus
+    $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+      mode: "htmlmixed",
+      theme: "monokai"
+    });
+  })
+</script>
+
+
+<script>
+
+  
+     // Tommbol hapus
   $('.tombol-hapus').on('click', function (e) {
     // Mematikan href
     e.preventDefault();
-    const href = $(this).attr('href');
+    // const href = $(this).attr('href');
+    // const action = $(this).attr('action');
+
+    let id = $(this).data('id');
 
     Swal({
       title: 'Apakah anda yakin ingin menghapus?',
@@ -38,11 +61,17 @@
       confirmButtonText: 'Hapus Data!'
     }).then((result) => {
       if (result.value) {
-        document.location.href = href;
+        // document.location.href = href;
+        // document.location.action = action;
+        // document.getElementById("#delete").setValue('Adakah');
+        // console.log(result);
+        $('#form-delete').submit();
       }
     })
 })
 </script>
+
+
 
 
 </body>

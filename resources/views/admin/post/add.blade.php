@@ -89,6 +89,8 @@
   </div>
 </div>
 
+<script src="/plugins/jquery/jquery.min.js"></script>
+
 <script src="/plugins/summernote/summernote-bs4.min.js"></script>
 
 <script>

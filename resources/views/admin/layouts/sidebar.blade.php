@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="/img/ktc_logo_line.png" alt="AdminLTE Logo" width="15px" class="" style="opacity: .8"> 
-      <span class="brand-text font-weight-light">KTC FW</span>
+      <span class="brand-text font-weight-light">ADMIN</span>
     </a>
 
     <!-- Sidebar -->
@@ -25,7 +25,7 @@
             </a>
           </li>
 
-            <li class="nav-item {{Request::is('admin/posts*') ? 'menu-open' : ''}}">
+            {{-- <li class="nav-item {{Request::is('admin/posts*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link {{Request::is('admin/posts*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
@@ -47,6 +47,36 @@
                 </a>
               </li>
             </ul>
+          </li> --}}
+
+          @foreach ($kategori_provider as $item)
+              
+          <li class="nav-item">
+            <a href="/admin/umkm?kategori_id={{$item->id}}" class="nav-link {{request('kategori_id') == $item->id ? 'active' : ''}}">
+              <i class="nav-icon {{$item->icon}}"></i>
+              <p>
+                {{$item->name}}
+              </p>
+            </a>
+          </li>
+          @endforeach
+
+          <li class="nav-item">
+            <a href="/admin/wisata" class="nav-link {{Request::is('admin/wisata*') ? 'active' : ''}}">
+              <i class="nav-icon fas fa-mountain"></i>
+              <p>
+                Wisata
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/admin/kecamatan" class="nav-link {{Request::is('admin/kecamatan*') ? 'active' : ''}}">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Kecamatan
+              </p>
+            </a>
           </li>
 
           <li class="nav-item {{Request::is('admin/user*') ? 'menu-open' : ''}}">

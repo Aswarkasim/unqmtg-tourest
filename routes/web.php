@@ -8,6 +8,11 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminCategoryPostController;
 use App\Http\Controllers\AdminConfigurationController;
+use App\Http\Controllers\AdminKecamatanController;
+use App\Http\Controllers\AdminUmkmController;
+use App\Http\Controllers\AdminWisataController;
+use App\Http\Controllers\HomeUmkmController;
+use App\Http\Controllers\HomeWisataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +47,10 @@ Route::prefix('/admin')->group(function () {
         return view('admin/layouts/wrapper', $data);
     });
 
+    Route::resource('/wisata', AdminWisataController::class);
+    Route::resource('/kecamatan', AdminKecamatanController::class);
+    Route::resource('/umkm', AdminUmkmController::class);
+
     Route::resource('/user', AdminUserController::class);
 
     Route::get('/konfigurasi', [AdminConfigurationController::class, 'index']);
@@ -51,12 +60,16 @@ Route::prefix('/admin')->group(function () {
 
 
     Route::prefix('/posts')->group(function () {
-        Route::resource('/post', AdminPostController::class);
         Route::resource('/kategori', AdminCategoryPostController::class);
+        Route::resource('/post', AdminPostController::class);
     });
 });
 
-Route::prefix('/home')->group(function () {
-    // Route::resource('/mitra', HomeMitraController::class);;
-    // Route::resource('/layanan', HomeLayananController::class);;
-});
+
+Route::get('/wisata', [HomeWisataController::class, 'index']);
+Route::get('/wisata/detail/{id}', [HomeWisataController::class, 'detail']);
+
+Route::get('/penginapan', [HomeUmkmController::class, 'penginapan']);
+Route::get('/rental', [HomeUmkmController::class, 'rental']);
+Route::get('/jajanan', [HomeUmkmController::class, 'jajanan']);
+Route::get('/kuliner', [HomeUmkmController::class, 'kuliner']);

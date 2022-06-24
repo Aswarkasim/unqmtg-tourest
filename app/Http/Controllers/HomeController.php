@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Banner;
+use App\Models\Kecamatan;
+use App\Models\Umkm;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,7 +17,8 @@ class HomeController extends Controller
 
         $data = [
             'banner'    => Banner::get(),
-            'post'     => Post::with('category')->paginate(8),
+            'kecamatan' => Kecamatan::all(),
+            'kuliner'   => Umkm::whereKategoriId(3)->get(),
             'content'  => 'home/home/index'
         ];
         return view('home/layouts/wrapper', $data);
