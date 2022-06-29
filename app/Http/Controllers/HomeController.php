@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Umkm;
 use App\Models\Saran;
 use App\Models\Banner;
+use App\Models\Configuration;
 use App\Models\Kecamatan;
 use Illuminate\Http\Request;
 
@@ -30,6 +31,7 @@ class HomeController extends Controller
         //
 
         $data = [
+            'kontak'   => Configuration::first(),
             'content'  => 'home/home/contact'
         ];
         return view('home/layouts/wrapper', $data);

@@ -1,14 +1,38 @@
-<!-- FOOTER -->
-      <footer class="container mt-5">
-        <a href="#">Back to top</a>
-        <a href="/admin/auth" class="mx-5">Login</a>
-        <p>&copy; 2022 Karossa Teknologi Center, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-    </main>
 
+
+<!-- FOOTER -->
+
+  </main>
+
+
+<footer class="footer mt-auto py-5">
+  <div class="container">
+    <h5 class="text-orange"><strong>Kontak Kami</strong></h5>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="d-block">
+          <p class="text-white"><i class="fas fa-map-marker-alt"></i> {{$config_provider->alamat}}</p>
+          <p class="text-white"><i class="fas fa-phone"></i> {{$config_provider->no_telp}}</p>
+          <p class="text-white"><i class="fas fa-envelope"></i> {{$config_provider->email}}</p>
+        </div>
+      </div>
+      <div class="col-md-6 text-right">
+        <a class="text-white px-2" href="{{$config_provider->ig}}" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        <a class="text-white px-2" href="{{$config_provider->fb}}" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+        <a class="text-white px-2" href="{{$config_provider->wa}}" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+        <a class="text-white px-2" href="{{$config_provider->tw}}" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+      </div>
+    </div>
+    <div class="pull-right">
+      <a href="#">Back to top</a>
+      <a href="/admin/auth" class="mx-5">Login admin</a>
+    </div>
+    <p>&copy; 2022 Karossa Teknologi Center, Inc. &middot;</p>
+  </div>
+</footer>
 
 <!-- Bootstrap 4 -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!-- AdminLTE App -->

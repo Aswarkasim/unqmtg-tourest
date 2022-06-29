@@ -1,23 +1,4 @@
-<div class="">
-  <div style="width: 100%; background-color: #3d3d3d">
-    <div class="container text-primary py-2">
-      <div class="d-flex">
-        <span class="px-2">
-          <i class="fas fa-phone"></i> 085 000 0000 0000
-        </span>
 
-         <span class="px-2">
-          <i class="fas fa-at"></i> uniquemateng@gmail.com
-        </span>
-
-        <div class="float-right">
-          a
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
 <header>
   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm py-3">
     <div class="container">
@@ -42,7 +23,7 @@
           </li>
 
            <li class="nav-item {{Request::is('rental*') ? 'active-menu' : ''}}">
-            <a class="nav-link font-weight-bold text-secondary" href="/rental">Rental Mobil</a>
+            <a class="nav-link font-weight-bold text-secondary" href="/rental">Jasa Transportasi</a>
           </li>
 
            <li class="nav-item {{Request::is('jajanan*') ? 'active-menu' : ''}}">

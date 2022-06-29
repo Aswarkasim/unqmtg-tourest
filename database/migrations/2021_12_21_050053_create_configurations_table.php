@@ -16,6 +16,13 @@ class CreateConfigurationsTable extends Migration
         Schema::create('configurations', function (Blueprint $table) {
             $table->id();
             $table->string('app_name');
+            $table->string('alamat');
+            $table->string('no_telp');
+            $table->string('email');
+            $table->string('fb');
+            $table->string('ig');
+            $table->string('wa');
+            $table->text('maps');
             $table->timestamps();
         });
     }
