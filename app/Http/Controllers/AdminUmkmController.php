@@ -106,6 +106,14 @@ class AdminUmkmController extends Controller
     public function show($id)
     {
         //
+        $kategori_id = request('kategori_id');
+        $umkm = Umkm::with('kecamatan')->find($id);
+        $data = [
+            'title'   => $umkm->name,
+            'umkm' => $umkm,
+            'content' => 'admin/umkm/show'
+        ];
+        return view('admin/layouts/wrapper', $data);
     }
 
     /**

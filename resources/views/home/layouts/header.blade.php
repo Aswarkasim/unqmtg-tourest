@@ -1,4 +1,13 @@
 
+<div class="py-1" style="background-color: #3d3d3d">
+  <div class="container">
+    <a class="text-primary px-2" href="{{$config_provider->ig}}" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a class="text-primary px-2" href="{{$config_provider->fb}}" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a class="text-primary px-2" href="{{$config_provider->wa}}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a class="text-primary px-2" href="{{$config_provider->tw}}" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+</div>
+
 <header>
   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm py-3">
     <div class="container">
