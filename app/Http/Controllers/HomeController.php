@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Umkm;
+use App\Models\Saran;
 use App\Models\Banner;
 use App\Models\Kecamatan;
-use App\Models\Umkm;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -32,5 +33,19 @@ class HomeController extends Controller
             'content'  => 'home/home/contact'
         ];
         return view('home/layouts/wrapper', $data);
+    }
+
+    //functioon form send saran
+    public function sendSaran(Request $request)
+    {
+        //
+        $data = $request->validate([
+            'name' => 'required',
+            'nohp' => 'required',
+            'subjek' => 'required',
+            'desc' => 'required'
+        ]);
+        Saran::create($data);
+        return redirect()->back()->with('success', 'Saran anda telah terkirim');
     }
 }

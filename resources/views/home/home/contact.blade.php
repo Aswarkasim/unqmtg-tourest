@@ -15,11 +15,39 @@
       <div class="card p-4 shadow rounded">
         <h3 class=""><strong>Kirim Saran</strong></h3>
         <hr>
-          <input type="text" class="form-control mb-3" style="height: 50px" name="name" placeholder="Nama Anda">
-          <input type="text" class="form-control mb-3" style="height: 50px" name="nohp" placeholder="No. Hp/ WA">
-          <input type="text" class="form-control mb-3" style="height: 50px" name="Subjek" placeholder="Subjek">
-          <textarea name="desc" class="form-control" placeholder="Pesan Anda" id="" cols="30" rows="10"></textarea>
+        <form action="/contact/send" method="POST">
+          @csrf
+          <input type="text" class="form-control mb-3 @error('name') is-invalid @enderror" style="height: 50px" name="name" placeholder="Nama Anda">
+          @error('name')
+            <div class="invalid-feedback">
+              {{$message}}
+            </div>
+          @enderror
+
+          <input type="text" class="form-control mb-3 @error('nohp') is-invalid @enderror" style="height: 50px" name="nohp" placeholder="No. Hp/ WA">
+           @error('nohp')
+            <div class="invalid-feedback">
+              {{$message}}
+            </div>
+          @enderror
+
+
+          <input type="text" class="form-control mb-3 @error('subjek') is-invalid @enderror" style="height: 50px" name="subjek" placeholder="Subjek">
+           @error('subjek')
+            <div class="invalid-feedback">
+              {{$message}}
+            </div>
+          @enderror
+
+          <textarea name="desc" class="form-control @error('name') is-invalid @enderror" placeholder="Pesan Anda" id="" cols="30" rows="10"></textarea>
+           @error('desc')
+            <div class="invalid-feedback">
+              {{$message}}
+            </div>
+          @enderror
+
           <button class="btn btn-wisata mt-3"><i></i><i class="fas fa-paper-plane"></i> Kirim</button>
+        </form>
       </div>
     </div>
     <div class="col-md-6">

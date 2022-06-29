@@ -64,6 +64,17 @@
           </div>
 
           <div class="form-group">
+            <label for="">Maps</label>
+            <input type="text" class="form-control  @error('maps') is-invalid @enderror"  name="maps"  value="{{isset($wisata) ? $wisata->maps : old('maps')}}" placeholder="Maps">
+             @error('maps')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+             @enderror
+          </div>
+          <p>Buka maps untuk mengambil titik lokasi wisata di <a href="https://www.google.com/maps/place/Kabupaten+Mamuju+Tengah,+Sulawesi+Barat/@-1.9974445,119.3330951,10.78z/data=!4m5!3m4!1s0x2d8d835d790f9719:0x7f1995f6768c5643!8m2!3d-1.9354109!4d119.5107708" target="blank">sini</a></p>
+
+          {{-- <div class="form-group">
             <label for="">Titik</label>
             <div class="row">
               <div class="col-md-6">
@@ -85,7 +96,7 @@
             </div>
             <p>Buka maps untuk mengambil titik lokasi wisata di <a href="https://www.google.com/maps/place/Kabupaten+Mamuju+Tengah,+Sulawesi+Barat/@-1.9974445,119.3330951,10.78z/data=!4m5!3m4!1s0x2d8d835d790f9719:0x7f1995f6768c5643!8m2!3d-1.9354109!4d119.5107708" target="blank">sini</a></p>
             
-          </div>
+          </div> --}}
 
 
           <div class="form-group">
@@ -106,6 +117,52 @@
           </div>
 
           <div class="col-md-6">
+
+             <div class="form-group">
+            <label for="">Harga</label>
+            <input type="text" class="form-control  @error('harga') is-invalid @enderror"  name="harga"  value="{{isset($wisata) ? $wisata->harga : old('harga')}}" placeholder="Harga">
+             @error('harga')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+             @enderror
+          </div>
+
+           <div class="form-group">
+            <label for="">Harga Satuan</label>
+            <select name="satuan" class="form-control @error('satuan') is-invalid @enderror" id="">
+              <option value="">-- Harga Satuan --</option>
+              <option value="Orang"
+              <?php 
+              if(isset($user)) {
+                if($user->satuan == 'Orang') {
+                  echo 'selected';
+                  }
+              }else{
+                if(old('satuan') == 'Orang') {
+                  echo 'selected';
+                }
+              } ?> >Admin</option>
+              <option value="Rombongan"
+              <?php 
+              if(isset($user)) {
+                if($user->satuan == 'Rombongan') {
+                  echo 'selected';
+                  }
+              }else{
+                if(old('satuan') == 'Rombongan') {
+                  echo 'selected';
+                }
+              } ?>
+              >User</option>
+            </select>
+             @error('satuan')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+             @enderror
+          </div>
+
             <div class="form-group">
                 <label for="">Deskripsi</label>
                 <textarea class="form-control  @error('desc') is-invalid @enderror" id="summernote"  name="desc" placeholder="Deskripsi">{{isset($wisata) ? $wisata->desc : old('desc')}}</textarea>

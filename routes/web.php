@@ -80,3 +80,4 @@ Route::get('/kuliner', [HomeUmkmController::class, 'kuliner']);
 Route::get('/umkm/detail/{id}', [HomeUmkmController::class, 'detail']);
 
 Route::get('/contact', [HomeController::class, 'contact']);
+Route::post('/contact/send', [HomeController::class, 'sendSaran']);
