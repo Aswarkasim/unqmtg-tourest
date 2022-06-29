@@ -25,6 +25,15 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="/admin/saran" class="nav-link {{Request::is('admin/saran*') ? 'active' : ''}}">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>
+                Saran
+              </p>
+            </a>
+          </li>
+
             {{-- <li class="nav-item {{Request::is('admin/posts*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link {{Request::is('admin/posts*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-newspaper"></i>

@@ -53,8 +53,8 @@
             <a class="nav-link font-weight-bold text-secondary" href="/kuliner">Kuliner</a>
           </li>
 
-           <li class="nav-item {{Request::is('kontak*') ? 'active-menu' : ''}}">
-            <a class="nav-link font-weight-bold text-secondary" href="/kontak">Kontak</a>
+           <li class="nav-item {{Request::is('contact*') ? 'active-menu' : ''}}">
+            <a class="nav-link font-weight-bold text-secondary" href="/contact">Kontak</a>
           </li>
 
          

@@ -1,6 +1,7 @@
 <!-- FOOTER -->
       <footer class="container mt-5">
-        <p class="float-right"><a href="#">Back to top</a></p>
+        <a href="#">Back to top</a>
+        <a href="/admin/auth" class="mx-5">Login</a>
         <p>&copy; 2022 Karossa Teknologi Center, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
     </main>

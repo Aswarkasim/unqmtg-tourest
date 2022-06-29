@@ -23,4 +23,14 @@ class HomeController extends Controller
         ];
         return view('home/layouts/wrapper', $data);
     }
+
+    public function contact()
+    {
+        //
+
+        $data = [
+            'content'  => 'home/home/contact'
+        ];
+        return view('home/layouts/wrapper', $data);
+    }
 }

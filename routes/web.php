@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminCategoryPostController;
 use App\Http\Controllers\AdminConfigurationController;
 use App\Http\Controllers\AdminKecamatanController;
+use App\Http\Controllers\AdminSaranController;
 use App\Http\Controllers\AdminUmkmController;
 use App\Http\Controllers\AdminWisataController;
 use App\Http\Controllers\HomeUmkmController;
@@ -47,6 +48,9 @@ Route::prefix('/admin')->group(function () {
         return view('admin/layouts/wrapper', $data);
     });
 
+    Route::get('/saran', [AdminSaranController::class, 'index']);
+    Route::get('/saran/detail/{id}', [AdminSaranController::class, 'detail']);
+
     Route::resource('/wisata', AdminWisataController::class);
     Route::resource('/kecamatan', AdminKecamatanController::class);
     Route::resource('/umkm', AdminUmkmController::class);
@@ -73,3 +77,6 @@ Route::get('/penginapan', [HomeUmkmController::class, 'penginapan']);
 Route::get('/rental', [HomeUmkmController::class, 'rental']);
 Route::get('/jajanan', [HomeUmkmController::class, 'jajanan']);
 Route::get('/kuliner', [HomeUmkmController::class, 'kuliner']);
+Route::get('/umkm/detail/{id}', [HomeUmkmController::class, 'detail']);
+
+Route::get('/contact', [HomeController::class, 'contact']);

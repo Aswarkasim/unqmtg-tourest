@@ -88,4 +88,15 @@ class HomeUmkmController extends Controller
         ];
         return view('home/layouts/wrapper', $data);
     }
+
+    function detail($id)
+    {
+        $umkm   = Umkm::with('kecamatan')->find($id);
+        $data = [
+            'umkm'          => $umkm,
+            'saran'         => Umkm::where('id', '!=', $id)->where('kecamatan_id', $umkm->kecamatan_id)->get(),
+            'content'       => 'home/umkm/detail'
+        ];
+        return view('home/layouts/wrapper', $data);
+    }
 }
