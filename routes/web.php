@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminCategoryPostController;
 use App\Http\Controllers\AdminConfigurationController;
 use App\Http\Controllers\AdminKecamatanController;
+use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminSaranController;
 use App\Http\Controllers\AdminUmkmController;
 use App\Http\Controllers\AdminWisataController;
@@ -54,6 +55,8 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/wisata', AdminWisataController::class);
     Route::resource('/kecamatan', AdminKecamatanController::class);
     Route::resource('/umkm', AdminUmkmController::class);
+
+    Route::resource('/umkm/produk', AdminProductController::class);
 
     Route::resource('/user', AdminUserController::class);
 

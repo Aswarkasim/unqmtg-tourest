@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Umkm;
 use Ramsey\Uuid\Uuid;
-use App\Models\Kategori;
-use App\Models\Kecamatan;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class AdminUmkmController extends Controller
+class AdminProductController extends Controller
 {
     /*
    **
@@ -20,15 +19,11 @@ class AdminUmkmController extends Controller
     public function index()
     {
         //
-        $kategori_id = request('kategori_id');
-        $kategori = Kategori::find($kategori_id);
-
-        $umkm = Umkm::whereKategoriId($kategori_id)->paginate(10);
-
+        $produk = Produk::paginate(10);
         $data = [
-            'title'   => 'Manajemen ' . $kategori->name,
-            'umkm' => $umkm,
-            'content' => 'admin/umkm/index'
+            'title'   => 'Manajemen Produk',
+            'produk' => $produk,
+            'content' => 'admin/produk/index'
         ];
         return view('admin/layouts/wrapper', $data);
     }
@@ -42,13 +37,12 @@ class AdminUmkmController extends Controller
     {
         //
 
-        $kategori_id = request('kategori_id');
-        $kategori = Kategori::find($kategori_id);
+        $id = request('umkm_id');
+        $umkm = Umkm::find($id);
         $data = [
-            'title'   => 'Manajemen ' . $kategori->name,
-            'kategori' => $kategori,
-            'kecamatan' => Kecamatan::all(),
-            'content' => 'admin/umkm/add'
+            'title'   => 'Manajemen ',
+            'umkm' => $umkm,
+            'content' => 'admin/produk/add'
         ];
         return view('admin/layouts/wrapper', $data);
     }
@@ -66,13 +60,11 @@ class AdminUmkmController extends Controller
 
         $data = $request->validate([
             'name'        => 'required',
+            'umkm_id'        => 'required',
             'kecamatan_id'        => 'required',
-            'alamat'        => 'required',
-            'lat'        => 'required',
-            'lng'        => 'required',
-            'desc'        => 'required',
-            'nohp'        => 'required',
             'kategori_id'        => 'required',
+            'harga'         => 'required',
+            'desc'        => 'required',
             'cover'              => 'required:mimes:jpg,png',
         ]);
 
@@ -92,9 +84,9 @@ class AdminUmkmController extends Controller
             $data['cover'] = NULL;
         }
 
-        Umkm::create($data);
-        Alert::success('Sukses', 'Umkm telah ditambahkan');
-        return redirect('/admin/umkm?kategori_id=' . $request->kategori_id);
+        Produk::create($data);
+        Alert::success('Sukses', 'Produk telah ditambahkan');
+        return redirect('/admin/umkm/' . $data['umkm_id']);
     }
 
     /**
@@ -106,14 +98,6 @@ class AdminUmkmController extends Controller
     public function show($id)
     {
         //
-        $kategori_id = request('kategori_id');
-        $umkm = Umkm::with(['kecamatan', 'produk'])->find($id);
-        $data = [
-            'title'   => $umkm->name,
-            'umkm' => $umkm,
-            'content' => 'admin/umkm/show'
-        ];
-        return view('admin/layouts/wrapper', $data);
     }
 
     /**
@@ -125,14 +109,10 @@ class AdminUmkmController extends Controller
     public function edit($id)
     {
         //
-        $kategori_id = request('kategori_id');
-        $kategori = Kategori::find($kategori_id);
         $data = [
-            'title'   => 'Manajemen Umkm',
-            'kategori' => $kategori,
-            'umkm' => Umkm::find($id),
-            'kecamatan' => Kecamatan::all(),
-            'content' => 'admin/umkm/add'
+            'title'   => 'Manajemen Produk',
+            'produk' => Produk::find($id),
+            'content' => 'admin/produk/add'
         ];
         return view('admin/layouts/wrapper', $data);
     }
@@ -149,18 +129,15 @@ class AdminUmkmController extends Controller
         //
         //
         // die('Adakah');
-        $umkm = Umkm::find($id);
+        $produk = Produk::find($id);
 
         $data = $request->validate([
             'name'        => 'required',
+            'umkm_id'        => 'required',
             'kecamatan_id'        => 'required',
-            'alamat'        => 'required',
-            'lat'        => 'required',
-            'lng'        => 'required',
-            'nohp'        => 'required',
-            'desc'        => 'required',
             'kategori_id'        => 'required',
-
+            'harga'         => 'required',
+            'desc'        => 'required',
             // 'cover'              => 'required:mimes:jpg,png',
         ]);
 
@@ -169,8 +146,8 @@ class AdminUmkmController extends Controller
         //perbaiki upload covernya
         if ($request->hasFile('cover')) {
 
-            if ($umkm->cover != '') {
-                unlink($umkm->cover);
+            if ($produk->cover != '') {
+                unlink($produk->cover);
             }
 
             $cover = $request->file('cover');
@@ -182,13 +159,13 @@ class AdminUmkmController extends Controller
             $cover->move($storage, $file_name);
             $data['cover'] = $storage . $file_name;
         } else {
-            $data['cover'] = $umkm->cover;
+            $data['cover'] = $produk->cover;
         }
 
 
-        $umkm->update($data);
-        Alert::success('Sukses', 'Umkm telah diubah');
-        return redirect('/admin/umkm?kategori_id=' . $request->kategori_id);
+        $produk->update($data);
+        Alert::success('Sukses', 'Produk telah diubah');
+        return redirect('/admin/umkm/' . $data['umkm_id']);
     }
 
     /**
@@ -201,14 +178,13 @@ class AdminUmkmController extends Controller
     {
         //
         //
-        $kategori_id = 1;
-        $umkm = Umkm::find($id);
-        if ($umkm->cover != '') {
-            unlink($umkm->cover);
+        $produk = Produk::find($id);
+        $umkm_id = $produk->umkm_id;
+        if ($produk->cover != '') {
+            unlink($produk->cover);
         }
-        $kategori_id = $umkm->kategori_id;
-        $umkm->delete();
-        Alert::success('Sukses', 'Umkm sukses dihapus');
-        return redirect('/admin/umkm?kategori_id=' . $kategori_id);
+        $produk->delete();
+        Alert::success('Sukses', 'Produk sukses dihapus');
+        return redirect('/admin/umkm/' . $umkm_id);
     }
 }

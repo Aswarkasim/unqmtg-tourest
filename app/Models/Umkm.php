@@ -15,4 +15,8 @@ class Umkm extends Model
     {
         return $this->belongsTo(Kecamatan::class);
     }
+    function produk()
+    {
+        return $this->hasMany(Produk::class);
+    }
 }
