@@ -45,7 +45,7 @@
 
           <div class="form-group">
             <label for="">No Hp</label>
-            <input type="text" class="form-control  @error('nohp') is-invalid @enderror"  name="nohp"  value="{{isset($umkm) ? $umkm->nohp : old('nohp')}}" placeholder="No Hp">
+            <input type="text" class="form-control  @error('nohp') is-invalid @enderror"  name="nohp"  value="{{isset($wisata) ? $wisata->nohp : old('nohp')}}" placeholder="No Hp">
              @error('nohp')
                 <div class="invalid-feedback">
                   {{$message}}
@@ -142,7 +142,7 @@
                 if(old('satuan') == 'Orang') {
                   echo 'selected';
                 }
-              } ?> >Admin</option>
+              } ?> >Orang</option>
               <option value="Rombongan"
               <?php 
               if(isset($user)) {
@@ -154,7 +154,7 @@
                   echo 'selected';
                 }
               } ?>
-              >User</option>
+              >Rombongan</option>
             </select>
              @error('satuan')
                 <div class="invalid-feedback">

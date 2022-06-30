@@ -138,8 +138,9 @@ class AdminWisataController extends Controller
             'name'        => 'required',
             'kecamatan_id'        => 'required',
             'alamat'        => 'required',
-            'lat'        => 'required',
-            'lng'        => 'required',
+            // 'lat'        => 'required',
+            // 'lng'        => 'required',
+            'maps'        => 'required',
             'nohp'        => 'required',
             'desc'        => 'required',
             // 'cover'              => 'required:mimes:jpg,png',
@@ -183,6 +184,7 @@ class AdminWisataController extends Controller
         //
         //
         $wisata = Wisata::find($id);
+        dd($wisata);
         if ($wisata->cover != '') {
             unlink($wisata->cover);
         }
