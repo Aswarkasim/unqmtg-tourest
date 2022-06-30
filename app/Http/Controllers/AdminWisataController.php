@@ -184,7 +184,7 @@ class AdminWisataController extends Controller
         //
         //
         $wisata = Wisata::find($id);
-        dd($wisata);
+        dd($id);
         if ($wisata->cover != '') {
             unlink($wisata->cover);
         }

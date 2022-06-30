@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminCategoryPostController;
 use App\Http\Controllers\AdminConfigurationController;
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminKecamatanController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminSaranController;
@@ -41,13 +42,8 @@ Route::prefix('/admin/auth')->group(function () {
 });
 
 
-Route::prefix('/admin')->group(function () {
-    Route::get('/dashboard', function () {
-        $data = [
-            'content' => 'admin/dashboard/index'
-        ];
-        return view('admin/layouts/wrapper', $data);
-    });
+Route::prefix('/admin')->middleware('auth')->group(function () {
+    Route::get('/dashboard', [AdminDashboardController::class, 'index']);
 
     Route::get('/saran', [AdminSaranController::class, 'index']);
     Route::get('/saran/show/{id}', [AdminSaranController::class, 'detail']);

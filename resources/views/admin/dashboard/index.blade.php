@@ -7,8 +7,8 @@
         <div class="info-box-content">
           <span class="info-box-text">Kecamatan</span>
           <span class="info-box-number">
-            10
-            <small>%</small>
+            {{$kecamatan}}
+            <small>Kecamatan</small>
           </span>
         </div>
         <!-- /.info-box-content -->
@@ -23,8 +23,8 @@
         <div class="info-box-content">
           <span class="info-box-text">Wisata</span>
           <span class="info-box-number">
-            10
-            <small>%</small>
+            {{$wisata}}
+            <small>Destinasi</small>
           </span>
         </div>
         <!-- /.info-box-content -->
@@ -39,8 +39,8 @@
         <div class="info-box-content">
           <span class="info-box-text">Penginapan</span>
           <span class="info-box-number">
-            10
-            <small>%</small>
+            {{$penginapan}}
+            <small>Terdata</small>
           </span>
         </div>
         <!-- /.info-box-content -->
@@ -55,8 +55,8 @@
         <div class="info-box-content">
           <span class="info-box-text">Kuliner</span>
           <span class="info-box-number">
-            10
-            <small>%</small>
+            {{$kuliner}}
+            <small>Warung</small>
           </span>
         </div>
         <!-- /.info-box-content -->
@@ -71,8 +71,8 @@
         <div class="info-box-content">
           <span class="info-box-text">Jajanan</span>
           <span class="info-box-number">
-            10
-            <small>%</small>
+            {{$jajanan}}
+            <small>Toko</small>
           </span>
         </div>
         <!-- /.info-box-content -->
@@ -85,10 +85,10 @@
         <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-car"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Rental Mobil</span>
+          <span class="info-box-text">Jasa Transportasi</span>
           <span class="info-box-number">
-            10
-            <small>%</small>
+            {{$rental}}
+            <small>Tempat</small>
           </span>
         </div>
         <!-- /.info-box-content -->

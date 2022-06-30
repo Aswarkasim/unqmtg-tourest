@@ -92,6 +92,8 @@
             </a>
           </li>
 
+          @if (Auth::user()->role == 'admin')
+              
           <li class="nav-item {{Request::is('admin/user*') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link {{Request::is('admin/user*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-users"></i>
@@ -107,17 +109,11 @@
                   <p>User</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Admin</p>
-                </a>
-              </li>
             </ul>
           </li>
-
-           <li class="nav-item">
-            <a href="/admin/banner" class="nav-link">
+          
+          <li class="nav-item">
+            <a href="/admin/banner" class="nav-link {{Request::is('admin/banner*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-image"></i>
               <p>
                 Banner
@@ -126,13 +122,16 @@
           </li>
           
           <li class="nav-item">
-            <a href="/admin/konfigurasi" class="nav-link">
+            <a href="/admin/konfigurasi" class="nav-link {{Request::is('admin/konfigurasi*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Konfigurasi
               </p>
             </a>
           </li>
+          @endif
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
