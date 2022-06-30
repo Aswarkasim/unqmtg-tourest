@@ -30,7 +30,9 @@
       <h3><b>Deskripsi</b></h3>
       <p>{!!$wisata->desc!!}</p>
 
-     {!!$wisata->maps!!}
+     {{-- {!!$wisata->maps!!} --}}
+
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510379.0869031895!2d119.50183855!3d-2.02096395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d8d835d790f9719%3A0x7f1995f6768c5643!2sKabupaten%20Mamuju%20Tengah%2C%20Sulawesi%20Barat!5e0!3m2!1sid!2sid!4v1656569854830!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     </div>
 

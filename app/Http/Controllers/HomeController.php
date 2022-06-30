@@ -22,6 +22,7 @@ class HomeController extends Controller
             'banner'    => Banner::get(),
             'kecamatan' => Kecamatan::all(),
             'kuliner'   => Produk::with(['umkm', 'kecamatan'])->inRandomOrder()->whereKategoriId(3)->limit(4)->get(),
+            'rental'   => Produk::with(['umkm', 'kecamatan'])->inRandomOrder()->whereKategoriId(1)->limit(4)->get(),
             'content'  => 'home/home/index'
         ];
         return view('home/layouts/wrapper', $data);

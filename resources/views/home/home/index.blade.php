@@ -83,7 +83,7 @@
             <img src="/{{$item->cover}}" class="card-img-top" alt="...">
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{$item->name}}</h5>
+            <p class="card-title text-primary"><strong>{{$item->name}}</strong></p>
             <p class="card-text"><i class="fas fa-home"></i> {{$item->umkm->name}}</p>
             <i class="fas fa-map-marker-alt"></i> Kec. {{$item->kecamatan->name}}
             <a href="/umkm/detail/{{$item->umkm_id}}" class="btn btn-warning btn-block mt-2" style="width: 100%">Kunjungi</a>
@@ -97,8 +97,45 @@
       <div class="text-center">
         <a href="" class="btn btn-danger px-5">Selengkapnya</a>
       </div>
+  </div>
+</div>
 
+<div class="col-md-12 py-5 my-5" style="background-color: #fff5d0">
+  <div class="container">
+    <h5 class="text-dark">Tidak punya kendaraan untuk rombongan? Kamu perlu jasa transportasi</h5>
+    {{-- <p class="text-dark">Cari destinasi yang bisa membuat pikiran sejenak melupakan pekerjaan</p> --}}
+  </div>
+</div>
+
+<div class="container my-3">
+    <div class="row">
+      <div class="text-center mb-5">
+        <h1 class="brush-font text-primary">Jasa Transportasi</h1>
+        <h2>Tengoklah kiri kanan, mungkin saja ada pohon cemara</h2>
+      </div>
+
+      @foreach ($rental as $item)
+          
+      <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="{{$loop->iteration*200}}" data-aos-anchor-placement="top-bottom">
+        <div class="card">
+          <div class="img-wrapper-product">
+            <img src="/{{$item->cover}}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <p class="card-title text-primary"><strong>{{$item->name}}</strong></p>
+            <p class="card-text"><i class="fas fa-home"></i> {{$item->umkm->name}}</p>
+            <i class="fas fa-map-marker-alt"></i> Kec. {{$item->kecamatan->name}}
+            <a href="/umkm/detail/{{$item->umkm_id}}" class="btn btn-warning btn-block mt-2" style="width: 100%">Kunjungi</a>
+          </div>
+        </div>
+      </div>
       
+      @endforeach
+      
+
+      <div class="text-center">
+        <a href="" class="btn btn-danger px-5">Selengkapnya</a>
+      </div>
   </div>
 </div>
 

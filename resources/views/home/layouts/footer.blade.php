@@ -7,16 +7,17 @@
 
 <footer class="footer mt-auto py-5">
   <div class="container">
-    <h5 class="text-orange"><strong>Kontak Kami</strong></h5>
     <div class="row">
       <div class="col-md-6">
         <div class="d-block">
+          <h5 class="text-orange"><strong>Kontak Kami</strong></h5>
           <p class="text-white"><i class="fas fa-map-marker-alt"></i> {{$config_provider->alamat}}</p>
           <p class="text-white"><i class="fas fa-phone"></i> {{$config_provider->no_telp}}</p>
           <p class="text-white"><i class="fas fa-envelope"></i> {{$config_provider->email}}</p>
         </div>
       </div>
       <div class="col-md-6 text-right">
+        <h5 class="text-orange"><strong>Temukan kami</strong></h5>
         <a class="text-white px-2" href="{{$config_provider->ig}}" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
         <a class="text-white px-2" href="{{$config_provider->fb}}" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
         <a class="text-white px-2" href="{{$config_provider->wa}}" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
