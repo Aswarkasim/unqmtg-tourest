@@ -31,7 +31,9 @@
               <p>
                 Saran
               </p>
-              <span class="badge badge-danger right">2</span>
+              @if ($notif_provider != 0)
+              <span class="badge badge-danger right">{{$notif_provider}}</span>
+              @endif
             </a>
           </li>
 

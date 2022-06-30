@@ -59,17 +59,16 @@
   </div>
 </div>
 
-  {{-- <div class="col-md-12 bg-primary py-5 my-5">
+  <div class="col-md-12 bg-primary py-5 my-5">
     <div class="container">
-      <p class="text-white">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta officia, consequuntur quod explicabo eaque a! Temporibus, soluta, quam quo dignissimos, nobis quibusdam sed laborum nisi illum perspiciatis odio pariatur laboriosam.
-      </p>
+      <h5 class="text-white">Mungkin kamu hanya butuh berlibur</h5>
+      <p class="text-white">Cari destinasi yang bisa membuat pikiran sejenak melupakan pekerjaan</p>
     </div>
-  </div> --}}
+  </div>
 
 
 
-{{-- <div class="container">
+<div class="container my-3">
     <div class="row">
       <div class="text-center mb-5">
         <h1 class="brush-font text-primary">Kuliner</h1>
@@ -80,11 +79,14 @@
           
       <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="{{$loop->iteration*200}}" data-aos-anchor-placement="top-bottom">
         <div class="card">
-          <img src="/img/food.jpg" class="card-img-top" alt="...">
+          <div class="img-wrapper-product">
+            <img src="/{{$item->cover}}" class="card-img-top" alt="...">
+          </div>
           <div class="card-body">
-            <h5 class="card-title">Pasta Sederhana</h5>
-            <p class="card-text"><i class="fas fa-home"></i> Warung Makan Lotu</p>
-            <i class="fas fa-map-marker-alt"></i> Kec. Karossa
+            <h5 class="card-title">{{$item->name}}</h5>
+            <p class="card-text"><i class="fas fa-home"></i> {{$item->umkm->name}}</p>
+            <i class="fas fa-map-marker-alt"></i> Kec. {{$item->kecamatan->name}}
+            <a href="/umkm/detail/{{$item->umkm_id}}" class="btn btn-warning btn-block mt-2" style="width: 100%">Kunjungi</a>
           </div>
         </div>
       </div>
@@ -98,5 +100,5 @@
 
       
   </div>
-</div> --}}
+</div>
 

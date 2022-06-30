@@ -29,7 +29,9 @@ class AdminServiceProvider extends ServiceProvider
         //
         $kategori = Kategori::all();
         $config = Configuration::first();
+        $notif = \App\Models\Saran::where('is_read', 0)->count();
         View::share('kategori_provider', $kategori);
         View::share('config_provider', $config);
+        View::share('notif_provider', $notif);
     }
 }

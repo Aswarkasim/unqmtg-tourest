@@ -9,15 +9,15 @@
   <div class="container">
     <h3><strong>{{$umkm->name}}</strong></h3>
      <div class="d-flex">
-        <h6 class="price-wisata text-primary"><b>{{format_rupiah($umkm->harga)}}</b></h6>
-        <h6 class="text-muted">/Per {{$umkm->satuan}}</h6> 
+        {{-- <h6 class="price-wisata text-primary"><b>{{format_rupiah($umkm->harga)}}</b></h6>
+        <h6 class="text-muted">/Per {{$umkm->satuan}}</h6>  --}}
       </div>
   </div>
 </div>
 
 <div class="container py-5">
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-8">
       
        <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -30,11 +30,32 @@
       <h3><b>Deskripsi</b></h3>
       <p>{!!$umkm->desc!!}</p>
 
-     {!!$umkm->maps!!}
+      <h3><b>Menu</b></h3>
+      <div class="row">
+      @foreach ($produk as $item)
+          
+      <div class="col-md-6 mb-3" data-aos="fade-up" data-aos-delay="{{$loop->iteration*200}}" data-aos-anchor-placement="top-bottom">
+        <div class="card">
+          <div class="img-wrapper-product">
+            <img src="/{{$item->cover}}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{$item->name}}</h5>
+            <p class="card-text text-danger"><i class="fas fa-money"></i> {{format_rupiah($item->harga)}}</p>
+            {{-- <a href="/umkm/detail/{{$item->umkm_id}}" class="btn btn-warning btn-block mt-2" style="width: 100%">Kunjungi</a> --}}
+          </div>
+        </div>
+      </div>
+      
+      @endforeach
+      </div>
+
+          {!!$umkm->maps!!}
+     
 
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-4">
       <div class="bg-cream p-3">
         <h4><strong>Akses</strong></h4>
         <div class="form-group mt-2">
@@ -76,6 +97,7 @@
           
           @endif
           @endforeach
+
 
     </div>
   </div>

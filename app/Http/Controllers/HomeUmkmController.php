@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kecamatan;
+use App\Models\Produk;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
 
@@ -92,8 +93,11 @@ class HomeUmkmController extends Controller
     function detail($id)
     {
         $umkm   = Umkm::with('kecamatan')->find($id);
+        $produk = Produk::with(['umkm', 'kecamatan'])->whereUmkmId($id)->get();
+        // dd($produk);
         $data = [
             'umkm'          => $umkm,
+            'produk'   => $produk,
             'saran'         => Umkm::where('id', '!=', $id)->where('kecamatan_id', $umkm->kecamatan_id)->get(),
             'content'       => 'home/umkm/detail'
         ];

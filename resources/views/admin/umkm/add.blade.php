@@ -13,7 +13,8 @@
         @endif
           @csrf
           
-
+<a href="/admin/umkm" class="btn btn-info "><i class="fa fa-arrow-left"></i> Kembali</a>
+          <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
           <div class="row">
             <div class="col-md-6">
 
@@ -63,7 +64,7 @@
              @enderror
           </div>
 
-          <div class="form-group">
+          {{-- <div class="form-group">
             <label for="">Titik</label>
             <div class="row">
               <div class="col-md-6">
@@ -83,9 +84,18 @@
                   @enderror
               </div>
             </div>
-            <p>Buka maps untuk mengambil titik lokasi umkm di <a href="https://www.google.com/maps/place/Kabupaten+Mamuju+Tengah,+Sulawesi+Barat/@-1.9974445,119.3330951,10.78z/data=!4m5!3m4!1s0x2d8d835d790f9719:0x7f1995f6768c5643!8m2!3d-1.9354109!4d119.5107708" target="blank">sini</a></p>
             
+          </div> --}}
+         <div class="form-group">
+            <label for="">Maps</label>
+            <input type="text" class="form-control  @error('maps') is-invalid @enderror"  name="maps"  value="{{isset($umkm) ? $umkm->maps : old('maps')}}" placeholder="Maps">
+             @error('maps')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+             @enderror
           </div>
+          <p>Buka maps untuk mengambil titik lokasi umkm di <a href="https://www.google.com/maps/place/Kabupaten+Mamuju+Tengah,+Sulawesi+Barat/@-1.9974445,119.3330951,10.78z/data=!4m5!3m4!1s0x2d8d835d790f9719:0x7f1995f6768c5643!8m2!3d-1.9354109!4d119.5107708" target="blank">sini</a></p>
 
 
           <div class="form-group">
@@ -117,12 +127,11 @@
               </div>
 
             </div>
-          </div>
 
-     
-          <a href="/admin/umkm" class="btn btn-info "><i class="fa fa-arrow-left"></i> Kembali</a>
-         <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
-        
+            
+          </div>
+          
+
         </form>
       </div>
     </div>

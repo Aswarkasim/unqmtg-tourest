@@ -8,6 +8,7 @@ use App\Models\Saran;
 use App\Models\Banner;
 use App\Models\Configuration;
 use App\Models\Kecamatan;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,7 +21,7 @@ class HomeController extends Controller
         $data = [
             'banner'    => Banner::get(),
             'kecamatan' => Kecamatan::all(),
-            'kuliner'   => Umkm::whereKategoriId(3)->get(),
+            'kuliner'   => Produk::with(['umkm', 'kecamatan'])->inRandomOrder()->whereKategoriId(3)->limit(4)->get(),
             'content'  => 'home/home/index'
         ];
         return view('home/layouts/wrapper', $data);
