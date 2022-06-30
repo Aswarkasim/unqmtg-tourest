@@ -2,7 +2,7 @@
 
 </style>
 <div class="img-wrapper-cover">
-  <img src="/img/1.jpg" alt="">
+  <img src="/{{$wisata->cover}}" width="100%" alt="">
 </div>
 
 <div class="bg-cream py-4">
@@ -70,7 +70,7 @@
                 <img src="/{{$item->cover}}" width="200px" alt="">
               </div>
               <div class="d-block p-3">
-                <h6><a href="/wisata/detail/{{$wisata->id}}" class="price-wisata text-primary text-decoration-none"><strong>Name Wisata</strong></a></h6>
+                <h6><a href="/wisata/detail/{{$item->id}}" class="price-wisata text-primary text-decoration-none"><strong>Name Wisata</strong></a></h6>
                 <span><i class="fas fa-map-marker-alt"></i> Kec. Karossa</span>
               </div>
             </div>

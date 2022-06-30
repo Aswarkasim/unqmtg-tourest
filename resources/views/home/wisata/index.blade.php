@@ -6,7 +6,7 @@
 <div class="container my-5">
   <div class="text-center">
     <h1 class="brush-font text-orange">Destinasi Wisata</h1>
-    <h3>Cari destinasi wisdata di kecamatan Karossa</h3>
+    <h3>Cari destinasi wisata di kecamatan Karossa</h3>
 
     @foreach ($kecamatan as $item)
       <a href="/wisata?kecamatan_id={{$item->id}}" class="btn {{$item->id == request('kecamatan_id') ? 'btn-filter-active' : 'btn-filter'}} my-1">{{$item->name}}</a>

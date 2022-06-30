@@ -117,7 +117,7 @@ class AdminBannerController extends Controller
         $banner = Banner::find($id);
         $data = $request->validate([
             'topik'         => 'required',
-            'image'         => 'mimes:jpeg,jpg,png,bmp',
+            // 'image'         => 'mimes:jpeg,jpg,png,bmp',
             'urutan'        => 'required|unique:banners,urutan,' . $banner->id,
             'desc'          => 'required|min:3',
         ]);

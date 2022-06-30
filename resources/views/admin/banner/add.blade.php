@@ -24,7 +24,7 @@
 
           <div class="form-group">
             <label for="">Deskripsi</label>
-            <textarea class="form-control  @error('desc') is-invalid @enderror" id="summernote"  name="desc" placeholder="Deskripsi">{{isset($banner) ? $banner->desc : old('desc')}}</textarea>
+            <textarea class="form-control  @error('desc') is-invalid @enderror"  name="desc" placeholder="Deskripsi">{{isset($banner) ? $banner->desc : old('desc')}}</textarea>
             @error('desc')
                 <div class="invalid-feedback">
                   {{$message}}
