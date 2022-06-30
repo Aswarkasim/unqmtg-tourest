@@ -27,7 +27,7 @@
             <span class="text-muted"><i class="fas fa-map-marker-alt"></i> Kec. {{$row->kecamatan->name}}</span>
             <h4 class="py-2"><b>{{$row->name}}</b></h4>
             <div class="d-flex">
-              <h6 class="price-wisata text-primary"><b>Rp 5.000</b></h6>
+              <h6 class="price-wisata text-primary"><b>{{format_rupiah($row->harga)}}</b></h6>
               <h6 class="text-muted">/Per Orang</h6> 
             </div>
             
