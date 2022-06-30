@@ -31,6 +31,7 @@
               <p>
                 Saran
               </p>
+              <span class="badge badge-danger right">2</span>
             </a>
           </li>
 
@@ -61,6 +62,7 @@
           @foreach ($kategori_provider as $item)
               
           <li class="nav-item">
+            {{-- <a href="/admin/umkm?kategori_id={{$item->id}}" class="nav-link {{request('kategori_id') == $item->id ? 'active' : ''}}"> --}}
             <a href="/admin/umkm?kategori_id={{$item->id}}" class="nav-link {{request('kategori_id') == $item->id ? 'active' : ''}}">
               <i class="nav-icon {{$item->icon}}"></i>
               <p>

@@ -50,7 +50,8 @@ Route::prefix('/admin')->group(function () {
     });
 
     Route::get('/saran', [AdminSaranController::class, 'index']);
-    Route::get('/saran/detail/{id}', [AdminSaranController::class, 'detail']);
+    Route::get('/saran/show/{id}', [AdminSaranController::class, 'detail']);
+    Route::get('/saran/delete/{id}', [AdminSaranController::class, 'delete']);
 
     Route::resource('/wisata', AdminWisataController::class);
     Route::resource('/kecamatan', AdminKecamatanController::class);

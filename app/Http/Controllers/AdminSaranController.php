@@ -18,10 +18,24 @@ class AdminSaranController extends Controller
     }
     function detail($id)
     {
+        $saran = Saran::find($id);
+
+        if ($saran->is_read == 0) {
+            $saran->is_read = 1;
+            $saran->save();
+        }
+
         $data = [
-            'saran'     => Saran::find($id),
-            'content' => 'admin/saran/detail'
+            'saran'     => $saran,
+            'content' => 'admin/saran/show'
         ];
         return view('admin/layouts/wrapper', $data);
+    }
+
+    function delete($id)
+    {
+        $saran = Saran::find($id);
+        $saran->delete();
+        return redirect('/admin/saran');
     }
 }

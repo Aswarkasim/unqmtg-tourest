@@ -7,7 +7,7 @@
         <input type="text" name="cari" class="form-control" placeholder="Cari..">
         <span class="input-group-append">
           <button type="submit" class="btn btn-primary btn-flat"><i class="fa fa-search"></i></button>
-          <a href="/admin/saran" class="btn btn-info btn-flat tombol-hapus"><i class="fa fa-sync-alt"></i></a>
+          <a href="/admin/saran" class="btn btn-info btn-flat"><i class="fa fa-sync-alt"></i></a>
         </span>
       </div>
       </form>
@@ -17,7 +17,6 @@
     <tr>
       <th width="30px">#</th>
       <th>Nama</th>
-      <th class="100px">Action</th>
     </tr>
   </thead>
 
@@ -26,23 +25,9 @@
         
     <tr>
       <td width="50px">{{$loop->iteration}}</td>
-      <td><a href="/admin/saran/{{$row->id}}"><b>{{$row->name}}</a></b> </td>
+      <td><a href="/admin/saran/show/{{$row->id}}"><b>{{$row->name}}</a></b> </td>
       <td>
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary"><i class="fa fa-cogs"></i></button>
-            <button type="button" class="btn btn-primary dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="true">
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu" role="menu" x-placement="bottom-start">
-              <a class="dropdown-item" href="/admin/saran/{{$row->id}}/edit"><i class="fa fa-edit"></i> Edit</a>
-                <div class="dropdown-divider"></div>
-                <form action="/admin/saran/{{$row->id}}" method="post" id="form-delete" class="tombol-hapus">
-                  @method('delete')
-                  @csrf
-                  <button type="submit" id="delete" class="dropdown-item"><i class="fa fa-trash"></i> Hapus</button>
-                </form>
-            </div>
-          </div>
+       
       </td>
     </tr>
 
