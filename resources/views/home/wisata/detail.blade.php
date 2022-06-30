@@ -70,7 +70,7 @@
                 <img src="/{{$item->cover}}" width="200px" alt="">
               </div>
               <div class="d-block p-3">
-                <h6><a href="/wisata/detail/{{$item->id}}" class="price-wisata text-primary text-decoration-none"><strong>{{$wisata->name}}</strong></a></h6>
+                <h6><a href="/wisata/detail/{{$item->id}}" class="price-wisata text-primary text-decoration-none"><strong>{{$item->name}}</strong></a></h6>
                 <span><i class="fas fa-map-marker-alt"></i> Kec. Karossa</span>
               </div>
             </div>
