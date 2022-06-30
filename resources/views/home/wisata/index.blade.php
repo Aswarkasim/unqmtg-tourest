@@ -24,10 +24,10 @@
             <img src="/{{$row->cover}}" width="100%" class="zoom-in" alt="">
           </div>
           <div class="content-wrapper-wisata p-4">
+            <p class="pt-2"><b>{{$row->name}}</b></p>
             <span class="text-muted"><i class="fas fa-map-marker-alt"></i> Kec. {{$row->kecamatan->name}}</span>
-            <h4 class="py-2"><b>{{$row->name}}</b></h4>
             <div class="d-flex">
-              <h6 class="price-wisata text-primary"><b>{{format_rupiah($row->harga)}}</b></h6>
+              <p class="price-wisata text-primary"><b>{{format_rupiah($row->harga)}}</b></p>
               <h6 class="text-muted">/Per Orang</h6> 
             </div>
             
