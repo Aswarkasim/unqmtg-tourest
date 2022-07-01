@@ -44,4 +44,21 @@
     @endif
 
   </div>
+
+  {{-- Paginate --}}
+  {{-- <div class="row my-5">
+    <div class="col-md-12 justify-content-center">
+      <div class="justify-content-center">
+        a
+      </div>
+      <div class="pagination-wrapper">
+        <div class="">
+
+          {{$wisata->links()}}
+        </div>
+      </div>
+    </div>
+  </div> --}}
+
+  {{-- End Paginate --}}
 </div>

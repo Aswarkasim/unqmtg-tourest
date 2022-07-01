@@ -57,7 +57,7 @@ class HomeUmkmController extends Controller
         if ($kecamatan_id) {
             $Umkm = Umkm::with('kecamatan')->whereKategoriId(3)->whereKecamatanId($kecamatan_id)->paginate(9);
         } else {
-            $Umkm = Umkm::with('kecamatan')->whereKategoriId(3)->paginate(1);
+            $Umkm = Umkm::with('kecamatan')->whereKategoriId(3)->paginate(9);
         }
         $data = [
             'umkm'          => $Umkm,
@@ -77,7 +77,7 @@ class HomeUmkmController extends Controller
         if ($kecamatan_id) {
             $Umkm = Umkm::with('kecamatan')->whereKategoriId(3)->whereKecamatanId($kecamatan_id)->paginate(9);
         } else {
-            $Umkm = Umkm::with('kecamatan')->whereKategoriId(3)->paginate(1);
+            $Umkm = Umkm::with('kecamatan')->whereKategoriId(3)->paginate(9);
         }
         $data = [
             'umkm'          => $Umkm,

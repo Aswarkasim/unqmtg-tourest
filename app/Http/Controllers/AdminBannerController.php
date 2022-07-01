@@ -117,7 +117,7 @@ class AdminBannerController extends Controller
         $banner = Banner::find($id);
         $data = $request->validate([
             'topik'         => 'required',
-            // 'image'         => 'mimes:jpeg,jpg,png,bmp',
+            // 'image'         => 'required',
             'urutan'        => 'required|unique:banners,urutan,' . $banner->id,
             'desc'          => 'required|min:3',
         ]);
@@ -136,7 +136,7 @@ class AdminBannerController extends Controller
             $image->move($storage, $file_name);
             $data['image'] = $storage . $file_name;
         } else {
-            $data['image'] = 'null';
+            $data['image'] = $banner->image;
         }
 
         $banner->update($data);

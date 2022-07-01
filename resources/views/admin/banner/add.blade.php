@@ -59,7 +59,7 @@
 
           <div class="form-group">
             <label for="">Gambar</label>
-            <input type="file" class="form-control  @error('image') is-invalid @enderror"  name="image"  value="{{isset($banner) ? $banner->image : old('image')}}" placeholder="image">
+            <input type="file" class="form-control  @error('image') is-invalid @enderror"  name="image"  placeholder="image">
             {{-- <input type="file" class="form-control  @error('image') is-invalid @enderror"  name="image"  placeholder="image"> --}}
              @error('image')
                 <div class="invalid-feedback">
