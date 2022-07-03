@@ -98,7 +98,7 @@
 
   </div>
 
-    <div class="row">
+    {{-- <div class="row">
           <div class="col-md-12">
             <!-- AREA CHART -->
             <div class="card card-primary">
@@ -124,7 +124,7 @@
             <!-- /.card -->
 
           </div>
-    </div>
+    </div> --}}
   {{-- <script src="/plugins/chart.js/Chart.min.js"></script> --}}
 
 <script>
