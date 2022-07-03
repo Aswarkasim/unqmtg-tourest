@@ -111,6 +111,7 @@ class AdminBannerController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         //
         //
         // die('Adakah');
@@ -141,7 +142,7 @@ class AdminBannerController extends Controller
 
         $banner->update($data);
         Alert::success('Sukses', 'Banner telah diubah');
-        return redirect('/admin/banner');
+        return redirect('/admin/banner/' . $id . '/edit');
     }
 
     /**

@@ -83,7 +83,7 @@
             <img src="/{{$item->cover}}" class="card-img-top" alt="...">
           </div>
           <div class="card-body">
-            <p class="card-title text-primary"><strong>{{$item->name}}</strong></p>
+            <p class="card-title text-primary"><strong>{{ Illuminate\Support\Str::limit($item->name,1)}}</strong></p>
             <p class="card-text"><i class="fas fa-home"></i> {{$item->umkm->name}}</p>
             <i class="fas fa-map-marker-alt"></i> Kec. {{$item->kecamatan->name}}
             <a href="/umkm/detail/{{$item->umkm_id}}" class="btn btn-warning btn-block mt-2" style="width: 100%">Kunjungi</a>

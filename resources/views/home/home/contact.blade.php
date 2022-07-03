@@ -64,7 +64,7 @@
         <i class="fas fa-phone fa-3x text-orange"></i>
         <div class="px-3">
           <h5 class="text-orange"><strong>Telepon</strong></h5>
-          <p>{{$kontak->mo_telp}}</p>
+          <p>{{$kontak->no_telp}}</p>
         </div>
       </div>
 
@@ -77,8 +77,10 @@
       </div>
 
 
-      
-      {!!$kontak->maps!!}
+      <div class="ratio ratio-4x3">
+
+        {!!$kontak->maps!!}
+      </div>
       
       
     </div>

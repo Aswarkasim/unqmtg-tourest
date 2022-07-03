@@ -32,7 +32,7 @@
 
   <!-- /.card-footer -->
   <div class="card-footer">
-    <a href="/admin/saran/delete/{{$saran->id}}" class="btn btn-default"><i class="far fa-trash-alt"></i> Hapus</a>
+    {{-- <a href="/admin/saran/delete/{{$saran->id}}" class="btn btn-default"><i class="far fa-trash-alt"></i> Hapus</a> --}}
   </div>
   <!-- /.card-footer -->
 </div>

@@ -26,7 +26,7 @@
     </div>
     <div class="pull-right">
       <a href="#">Back to top</a>
-      <a href="/admin/auth" class="mx-5">Login admin</a>
+      {{-- <a href="/admin/auth" class="mx-5">Login admin</a> --}}
     </div>
     <p>&copy; 2022 Karossa Teknologi Center, Inc. &middot;</p>
   </div>

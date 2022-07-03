@@ -24,11 +24,11 @@
             <img src="/{{$row->cover}}" width="100%" class="zoom-in" alt="">
           </div>
           <div class="content-wrapper-wisata p-4">
-            <p class="pt-2"><b>{{$row->name}}</b></p>
+            <p class="pt-2"><b>{{ Illuminate\Support\Str::limit($row->name,30)}}</b></p>
             <span class="text-muted"><i class="fas fa-map-marker-alt"></i> Kec. {{$row->kecamatan->name}}</span>
             <div class="d-flex">
               <p class="price-wisata text-primary"><b>{{format_rupiah($row->harga)}}</b></p>
-              <h6 class="text-muted">/Per Orang</h6> 
+              <h6 class="text-muted">/Per {{$row->satuan}}</h6> 
             </div>
             
             <a href="/wisata/detail/{{$row->id}}" class="btn btn-wisata mt-3">Lihat</a>
