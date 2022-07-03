@@ -29,7 +29,7 @@
       <td width="50px">{{$loop->iteration}}</td>
       <td><a href="/admin/wisata/{{$row->id}}"><b>{{$row->name}}</a></b> </td>
       <td>
-        {{$row->id}}
+        {{-- {{$row->id}} --}}
         <div class="btn-group">
             <button type="button" class="btn btn-primary"><i class="fa fa-cogs"></i></button>
             <button type="button" class="btn btn-primary dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="true">

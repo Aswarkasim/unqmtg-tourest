@@ -24,7 +24,7 @@
             <img src="/{{$row->cover}}" width="100%" class="zoom-in" alt="">
           </div>
           <div class="content-wrapper-wisata p-4">
-            <p class="pt-2"><b>{{ Illuminate\Support\Str::limit($row->name,30)}}</b></p>
+            <h6 class="pt-2"><b>{{ Illuminate\Support\Str::limit($row->name,25)}}</b></h6>
             <span class="text-muted"><i class="fas fa-map-marker-alt"></i> Kec. {{$row->kecamatan->name}}</span>
             <div class="d-flex">
               <p class="price-wisata text-primary"><b>{{format_rupiah($row->harga)}}</b></p>

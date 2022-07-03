@@ -12,22 +12,32 @@
       </div>
       </form>
   </div>
-<table id="example1" class="table table-striped">
+
+
+  <style>
+    .is-read{
+    background-color: #2275fc !important;
+    color: white;
+}
+  </style>
+
+  <table id="example1" class="table table-striped">
   <thead>
     <tr>
       <th width="30px">#</th>
       <th>Nama</th>
+      <th>Kotak</th>
     </tr>
   </thead>
 
   <tbody>
     @foreach ($saran as $row)
         
-    <tr>
+    <tr  class="{{$row->is_read == 0 ? 'is-read' : ''}}">
       <td width="50px">{{$loop->iteration}}</td>
-      <td><a href="/admin/saran/show/{{$row->id}}"><b>{{$row->name}}</a></b> </td>
+      <td><a href="/admin/saran/show/{{$row->id}}" class="{{$row->is_read == 0 ? 'text-white' : ''}}"><b>{{$row->name}}</a></b> </td>
       <td>
-       
+       {{$row->nohp}}
       </td>
     </tr>
 

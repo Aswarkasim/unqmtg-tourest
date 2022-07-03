@@ -6,10 +6,11 @@ use App\Models\Post;
 use App\Models\Umkm;
 use App\Models\Saran;
 use App\Models\Banner;
-use App\Models\Configuration;
-use App\Models\Kecamatan;
 use App\Models\Produk;
+use App\Models\Kecamatan;
 use Illuminate\Http\Request;
+use App\Models\Configuration;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -50,6 +51,7 @@ class HomeController extends Controller
             'desc' => 'required'
         ]);
         Saran::create($data);
+        Alert::success('Sukses', 'Saran anda telah terkirim');
         return redirect()->back()->with('success', 'Saran anda telah terkirim');
     }
 }

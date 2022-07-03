@@ -4,7 +4,7 @@
       <div class="card-body">
 
 
-          <form action="/admin/konfigurasi/update" method="POST">  
+          <form action="/admin/konfigurasi/update" method="POST" enctype="multipart/form-data">  
             @method('PUT')
           @csrf
         
@@ -50,6 +50,21 @@
                 @enderror
               </div>
 
+                <div class="form-group">
+                  <label for="">Logo</label>
+                  <input type="file" class="form-control  @error('logo') is-invalid @enderror"  name="logo"  placeholder="logo">
+                  {{-- <input type="file" class="form-control  @error('logo') is-invalid @enderror"  name="logo"  placeholder="logo"> --}}
+                  @error('logo')
+                      <div class="invalid-feedback">
+                        {{$message}}
+                      </div>
+                  @enderror
+
+                  @if (isset($konfigurasi))
+                      <img src="/{{$konfigurasi->logo}}" width="100%" class="py-3" alt="">
+                  @endif
+                </div>
+
             </div>
             <div class="col-md-6">
               <div class="form-group">
@@ -76,6 +91,16 @@
                 <label for="">Link Whatsapp</label>
                 <input type="text" class="form-control  @error('wa') is-invalid @enderror"  name="wa"  value="{{isset($konfigurasi) ? $konfigurasi->wa : old('wa')}}" placeholder="Alamat">
                 @error('wa')
+                    <div class="invalid-feedback">
+                      {{$message}}
+                    </div>
+                @enderror
+              </div>
+
+              <div class="form-group">
+                <label for="">Link Twitter</label>
+                <input type="text" class="form-control  @error('tw') is-invalid @enderror"  name="tw"  value="{{isset($konfigurasi) ? $konfigurasi->tw : old('tw')}}" placeholder="Alamat">
+                @error('tw')
                     <div class="invalid-feedback">
                       {{$message}}
                     </div>

@@ -32,8 +32,10 @@
 
      {{-- {!!$wisata->maps!!} --}}
 
-     <iframe src="{{$wisata->maps}}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+     {{-- <iframe src="{{$wisata->maps}}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+ <div class="ratio ratio-4x3">
+     {!!$wisata->maps!!}
+ </div>
     </div>
 
     <div class="col-md-5">

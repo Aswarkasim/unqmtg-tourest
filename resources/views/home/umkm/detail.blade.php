@@ -2,7 +2,7 @@
 
 </style>
 <div class="img-wrapper-cover">
-  <img src="/img/1.jpg" alt="">
+  <img src="/{{$umkm->cover}}" alt="">
 </div>
 
 <div class="bg-cream py-4">
@@ -22,7 +22,7 @@
        <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item"><a href="/wisata">Wisata</a></li>
+          <li class="breadcrumb-item"><a href="/wisata">UMKM</a></li>
           <li class="breadcrumb-item active" aria-current="page">Detail - {{$umkm->name}} </li>
         </ol>
       </nav>
@@ -50,7 +50,9 @@
       @endforeach
       </div>
 
+       <div class="ratio ratio-4x3">
           {!!$umkm->maps!!}
+          </div>
      
 
     </div>

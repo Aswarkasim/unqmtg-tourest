@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Ramsey\Uuid\Uuid;
 use Illuminate\Http\Request;
 use App\Models\Configuration;
 use Illuminate\Support\Facades\DB;
@@ -36,6 +37,26 @@ class AdminConfigurationController extends Controller
             'wa' => 'required|min:3',
             'maps' => 'required|min:3',
         ]);
+
+        //perbaiki upload logonya
+        if ($request->hasFile('logo')) {
+
+            if ($konfigurasi->logo != '') {
+                unlink($konfigurasi->logo);
+            }
+
+            $logo = $request->file('logo');
+            $uuid1 = Uuid::uuid4()->toString();
+            $uuid2 = Uuid::uuid4()->toString();
+            $file_name = $uuid1 . $uuid2 . '.' . $logo->getClientOriginalExtension();
+
+            $storage = 'uploads/images/';
+            $logo->move($storage, $file_name);
+            $data['logo'] = $storage . $file_name;
+        } else {
+            $data['logo'] = $konfigurasi->logo;
+        }
+
         $konfigurasi->update($data);
         Alert::success('Sukses', 'Konfigurasi telah diperbaharui');
         return redirect('/admin/konfigurasi');

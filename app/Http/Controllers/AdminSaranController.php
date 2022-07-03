@@ -11,7 +11,7 @@ class AdminSaranController extends Controller
     function index()
     {
         $data = [
-            'saran'     => Saran::paginate(10),
+            'saran'     => Saran::latest()->paginate(10),
             'content' => 'admin/saran/index'
         ];
         return view('admin/layouts/wrapper', $data);

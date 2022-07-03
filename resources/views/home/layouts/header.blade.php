@@ -12,7 +12,7 @@
   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm py-3">
     <div class="container">
       <a class="navbar-brand" href="/">
-       <img src="/img/logo.png" alt="Logo" width="150px" class="" style="opacity: .8"></b>
+       <img src="/{{$config_provider->logo}}" alt="Logo" width="140px" class="" style="opacity: .8"></b>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

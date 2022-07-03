@@ -25,7 +25,7 @@
           </div>
           <div class="content-wrapper-wisata p-4">
             <span class="text-muted"><i class="fas fa-map-marker-alt"></i> Kec. {{$row->kecamatan->name}}</span>
-            <h4 class="py-2"><b>{{ Illuminate\Support\Str::limit($row->name,30)}}</b></h4>
+            <h6 class="py-2"><b>{{ Illuminate\Support\Str::limit($row->name,30)}}</b></h6>
             <div class="d-flex">
               <h6 class="price-wisata text-primary"><b>Rp 5.000</b></h6>
               <h6 class="text-muted">/Per Orang</h6> 

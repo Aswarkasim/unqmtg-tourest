@@ -6,10 +6,10 @@
   <div class="card-header">
     <h3 class="card-title">Saran dan masukan dari {{$saran->name}}</h3>
 
-    <div class="card-tools">
+    {{-- <div class="card-tools">
       <a href="#" class="btn btn-tool" title="Previous"><i class="fas fa-chevron-left"></i></a>
       <a href="#" class="btn btn-tool" title="Next"><i class="fas fa-chevron-right"></i></a>
-    </div>
+    </div> --}}
   </div>
   <!-- /.card-header -->
   <div class="card-body p-0">

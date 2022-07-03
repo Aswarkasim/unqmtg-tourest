@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
-    <title>Unique Mateng | Dinas Pariwisata Mamuju Tengah</title>
+    <title>{{$config_provider->app_name}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/carousel/">
 

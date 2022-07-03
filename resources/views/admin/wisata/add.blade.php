@@ -8,7 +8,7 @@
         @if (Request::is('admin/wisata/create'))
           <form action="/admin/wisata" method="POST" enctype="multipart/form-data">  
         @else
-          <form action="/admin/wisata/{{$wisata->id}}" method="POST" encype="multipart/form-data">  
+          <form action="/admin/wisata/{{$wisata->id}}" method="POST" enctype="multipart/form-data">  
             @method('PUT')
         @endif
           @csrf
@@ -134,8 +134,8 @@
               <option value="">-- Harga Satuan --</option>
               <option value="Orang"
               <?php 
-              if(isset($user)) {
-                if($user->satuan == 'Orang') {
+              if(isset($wisata)) {
+                if($wisata->satuan == 'Orang') {
                   echo 'selected';
                   }
               }else{
@@ -145,8 +145,8 @@
               } ?> >Orang</option>
               <option value="Rombongan"
               <?php 
-              if(isset($user)) {
-                if($user->satuan == 'Rombongan') {
+              if(isset($wisata)) {
+                if($wisata->satuan == 'Rombongan') {
                   echo 'selected';
                   }
               }else{

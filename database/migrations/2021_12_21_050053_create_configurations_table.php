@@ -22,7 +22,9 @@ class CreateConfigurationsTable extends Migration
             $table->string('fb');
             $table->string('ig');
             $table->string('wa');
+            $table->string('tw');
             $table->text('maps');
+            $table->text('logo')->nullable();
             $table->timestamps();
         });
     }
