@@ -141,6 +141,8 @@ class AdminWisataController extends Controller
             // 'lat'        => 'required',
             // 'lng'        => 'required',
             'maps'        => 'required',
+            'harga'         => 'required',
+            'satuan'         => 'required',
             'nohp'        => 'required',
             'desc'        => 'required',
             // 'cover'              => 'required:mimes:jpg,png',

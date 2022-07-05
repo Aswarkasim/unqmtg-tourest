@@ -15,7 +15,7 @@ class HomeWisataController extends Controller
         $kecamatan_id = request('kecamatan_id');
         $wisata = [];
         if ($kecamatan_id) {
-            $wisata = Wisata::with('kecamatan')->whereKecamatanId($kecamatan_id)->get(9);
+            $wisata = Wisata::with('kecamatan')->whereKecamatanId($kecamatan_id)->get();
         } else {
             $wisata = Wisata::with('kecamatan')->get();
         }
