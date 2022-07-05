@@ -42,7 +42,7 @@ class HomeUmkmController extends Controller
         $data = [
             'umkm'          => $Umkm,
             'kecamatan'     => Kecamatan::all(),
-            'title'         => 'Rental Mobil',
+            'title'         => 'Jasa Transportasi',
             'link'          => 'rental',
             'desc'          => 'Mau kendaraan untuk keliling? di Mamuju tengah juga ada',
             'content'       => 'home/umkm/index'
