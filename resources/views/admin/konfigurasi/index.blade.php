@@ -99,7 +99,7 @@
 
               <div class="form-group">
                 <label for="">Link Twitter</label>
-                <input type="text" class="form-control  @error('tw') is-invalid @enderror"  name="tw"  value="{{isset($konfigurasi) ? $konfigurasi->tw : old('tw')}}" placeholder="Alamat">
+                <input type="text" class="form-control  @error('tw') is-invalid @enderror"  name="tw"  value="{{isset($konfigurasi) ? $konfigurasi->tw : old('tw')}}" placeholder="Twitter">
                 @error('tw')
                     <div class="invalid-feedback">
                       {{$message}}

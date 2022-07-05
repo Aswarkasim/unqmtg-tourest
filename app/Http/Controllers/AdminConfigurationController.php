@@ -35,6 +35,7 @@ class AdminConfigurationController extends Controller
             'fb' => 'required|min:3',
             'ig' => 'required|min:3',
             'wa' => 'required|min:3',
+            'tw' => 'required|min:3',
             'maps' => 'required|min:3',
         ]);
 
