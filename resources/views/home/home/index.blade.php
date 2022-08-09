@@ -68,6 +68,8 @@
 
 
 
+@if (count($kuliner) > 0)
+    
 <div class="container my-3">
     <div class="row">
       <div class="text-center mb-5">
@@ -100,6 +102,10 @@
   </div>
 </div>
 
+@endif
+
+
+@if (count($rental) > 0)
 <div class="col-md-12 py-5 my-5" style="background-color: #fff5d0">
   <div class="container">
     <h5 class="text-dark">Tidak punya kendaraan untuk rombongan? Kamu perlu jasa transportasi</h5>
@@ -139,3 +145,4 @@
   </div>
 </div>
 
+@endif
