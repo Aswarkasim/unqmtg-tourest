@@ -67,8 +67,8 @@
   </div>
 
 
-{{-- 
-@if (count($kuliner) > 0)
+
+{{-- @if (count($kuliner) > 0)
     
 <div class="container my-3">
     <div class="row">
@@ -93,7 +93,7 @@
         </div>
       </div>
       
-      @endforeach --}}
+      @endforeach
       
 
       <div class="text-center">
@@ -102,7 +102,7 @@
   </div>
 </div>
 
-@endif
+@endif --}}
 
 
 @if (count($rental) > 0)
