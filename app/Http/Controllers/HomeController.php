@@ -19,13 +19,16 @@ class HomeController extends Controller
     {
         //
 
+        $kuliner = Produk::with(['umkm', 'kecamatan'])->inRandomOrder()->whereKategoriId(3)->limit(4)->get();
+        $rental = Produk::with(['umkm', 'kecamatan'])->inRandomOrder()->whereKategoriId(1)->limit(4)->get();
         $data = [
             'banner'    => Banner::get(),
             'kecamatan' => Kecamatan::all(),
-            'kuliner'   => Produk::with(['umkm', 'kecamatan'])->inRandomOrder()->whereKategoriId(3)->limit(4)->get(),
-            'rental'   => Produk::with(['umkm', 'kecamatan'])->inRandomOrder()->whereKategoriId(1)->limit(4)->get(),
+            'kuliner'   => $kuliner,
+            'rental'   => $rental,
             'content'  => 'home/home/index'
         ];
+        dd($rental);
         return view('home/layouts/wrapper', $data);
     }
 
