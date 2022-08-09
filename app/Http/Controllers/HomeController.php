@@ -28,7 +28,7 @@ class HomeController extends Controller
             'rental'   => $rental,
             'content'  => 'home/home/index'
         ];
-        dd($rental);
+        // dd($rental);
         return view('home/layouts/wrapper', $data);
     }
 

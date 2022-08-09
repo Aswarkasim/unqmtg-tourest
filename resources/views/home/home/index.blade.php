@@ -122,6 +122,8 @@
 
       @foreach ($rental as $item)
           
+      @if ($item->umkm != null)
+          
       <div class="col-md-3 mb-3" data-aos="fade-up" data-aos-delay="{{$loop->iteration*200}}" data-aos-anchor-placement="top-bottom">
         <div class="card">
           <div class="img-wrapper-product">
@@ -137,6 +139,8 @@
           </div>
         </div>
       </div>
+      @endif
+
       
       @endforeach
       
