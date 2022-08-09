@@ -130,7 +130,9 @@
           <div class="card-body">
             <p class="card-title text-primary"><strong>{{$item->name}}</strong></p>
             <p class="card-text"><i class="fas fa-home"></i> {{$item->umkm->name}}</p>
+            @isset($item->kecamatan)
             <i class="fas fa-map-marker-alt"></i> Kec. {{$item->kecamatan->name}}
+            @endisset
             <a href="/umkm/detail/{{$item->umkm_id}}" class="btn btn-warning btn-block mt-2" style="width: 100%">Kunjungi</a>
           </div>
         </div>
