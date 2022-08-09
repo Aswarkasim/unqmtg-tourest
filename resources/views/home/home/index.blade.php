@@ -67,7 +67,7 @@
   </div>
 
 
-
+{{-- 
 @if (count($kuliner) > 0)
     
 <div class="container my-3">
@@ -87,13 +87,13 @@
           <div class="card-body">
             <p class="card-title text-primary"><strong>{{ Illuminate\Support\Str::limit($item->name,1)}}</strong></p>
             <p class="card-text"><i class="fas fa-home"></i> {{$item->umkm->name}}</p>
-            {{-- <i class="fas fa-map-marker-alt"></i> Kec. {{$item->kecamatan->name}} --}}
+            <i class="fas fa-map-marker-alt"></i> Kec. {{$item->kecamatan->name}}
             <a href="/umkm/detail/{{$item->umkm_id}}" class="btn btn-warning btn-block mt-2" style="width: 100%">Kunjungi</a>
           </div>
         </div>
       </div>
       
-      @endforeach
+      @endforeach --}}
       
 
       <div class="text-center">
